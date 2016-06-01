@@ -1,0 +1,100 @@
+//* Color */
+$color-main:#777777; // grey
+$color-second:#dd4250; // KooKoon red
+$color-third:#aaaaaa; //light grey
+$color-fourth:grey;
+$color-fifth:blue;
+$color-sixth:white;
+
+//* Typeface */
+$typeface-main:"Source Sans", sans-serif;
+$typeface-second:"Roboto Slab", sans-serif;
+$typeface-third:sans-serif;
+$typeface-fourth:sans-serif;
+$typeface-fifth:sans-serif;
+
+//* Font Size */
+$font-size-giant:6em;
+$font-size-bigger:2em;
+$font-size-big:1.3em;
+$font-size-normal:1em;
+$font-size-small:0.875em;
+$font-size-tiny:0.750em;
+
+//* Text Style */
+@mixin header-style($color:$color-sixth, $font-family:$typeface-second, $font-size:$font-size-big){
+	font-family:$font-family;
+	font-size:$font-size;
+	text-transform:uppercase;
+	a{
+		color:$color;
+		font-style:normal;
+	}	
+}
+@mixin title-style($color:lighten($color-main, 25%), $font-family:$typeface-second, $font-size:$font-size-big){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;
+	text-align:center;	
+	text-transform:uppercase;
+	margin:20px 0;
+}
+@mixin caption-style($color:$color-main, $font-family:$typeface-main, $font-size:$font-size-normal){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;	
+}
+@mixin headline-style($color:$color-main, $font-family:$typeface-second, $font-size:$font-size-giant){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;	
+	text-transform:uppercase;
+}
+@mixin subhead-style($color:$color-main, $font-family:$typeface-second, $font-size:$font-size-bigger){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;
+	text-transform:uppercase;	
+}
+@mixin body-type-style($color:$color-main, $font-family:$typeface-main, $font-size:$font-size-normal){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;	
+}
+@mixin footer-style($color:$color-main, $font-family:$typeface-main, $font-size:$font-size-tiny){
+	color:$color;
+	font-family:$font-family;
+	font-size:$font-size;	
+}
+
+//* Border Radius */
+@mixin rounded($radius){
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	-o-border-radius:$radius;
+	border-radius:$radius;
+}
+//* Box Shadow */
+@mixin shadow($x, $y, $blur, $color){
+	-webkit-box-shadow:$x, $y, $blur, $color;
+	-moz-box-shadow:$x, $y, $blur, $color;
+	-o-box-shadow:$x, $y, $blur, $color;
+	box-shadow:$x, $y, $blur, $color;
+}
+//* Gradient */
+@mixin linear-gradient($from, $to){
+	background-color: $to;
+	background-image:-moz-linear-gradient($from, $to);
+	background-image:-o-linear-gradient($from, $to);
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0,$from), color-stop(1, $to));
+	background-image:-webkit-linear-gradient($from, $to);
+	background-image:-ms-linear-gradient($from, $to);
+	background-image:linear-gradient($from, $to);
+}
+//* Transition Style */
+@mixin transition($property, $duration, $state){
+	-webkit-transition:$property $duration $state;
+	-moz-transition:$property $duration $state;
+	-o-transition:$property $duration $state;
+	transition:$property $duration $state;
+}
